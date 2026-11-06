@@ -1,0 +1,17 @@
+title: Michaela Jones
+description: "Publications, teaching resources and outreach from Michaela Jones, a postdoctoral associate in civil and environmental engineering at MIT working in synthetic biology and microbial ecology."
+# For a project site (username.github.io/repo) set baseurl: "/repo".
+# Leave blank for a user site or custom domain.
+baseurl: ""
+url: ""
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .claude
+  - vendor
+  - "*.ai"
+  - "*.zip"
+  - "*.HEIC"
+  - "*.pdf"

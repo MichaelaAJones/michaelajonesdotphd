@@ -1,0 +1,12 @@
+- id: publications
+  title: Publications
+  url: /publications.html
+- id: learn
+  title: Learn SynBio
+  url: /learn.html
+- id: teaching
+  title: Teaching
+  url: /teaching.html
+- id: about
+  title: About
+  url: /about.html
