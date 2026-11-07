@@ -1,9 +1,9 @@
 <nav class="site-nav">
   <div class="wrap">
-    {% unless page.url == '/' or page.url == '/index.html' %}<a href="{{ '/' | relative_url }}" class="brand">{{ site.title }}</a>{% endunless %}
+    {% unless page.url == '/' or page.url == '/index.html' %}<a href="./" class="brand">{{ site.title }}</a>{% endunless %}
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
     <div class="links" id="links">
-      {% for item in site.data.nav %}<a id="nav-{{ item.id }}" href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% for item in site.data.nav %}<a id="nav-{{ item.id }}" href="{{ item.url | remove_first: '/' }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
       {% endfor %}
     </div>
   </div>
