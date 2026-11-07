@@ -83,7 +83,15 @@ svg{display:block}
 .band{display:flex;align-items:stretch;min-height:200px;background:#e7e9ee;border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease}
 .band:nth-child(even){flex-direction:row-reverse}
 .band:hover,.band:focus-visible{transform:translateY(-4px);box-shadow:0 14px 24px rgba(37,43,57,.18)}
-.band-accent{flex:0 0 30%;display:flex;align-items:center;justify-content:center}
+.band-accent{flex:0 0 30%;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.band-accent img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.band:hover .band-accent img{transform:scale(1.05)}
+.band-accent::after{content:"";position:absolute;top:0;bottom:0;right:0;width:10px;background:var(--c)}
+.band:nth-child(even) .band-accent::after{right:auto;left:0}
+.band.t-navy{--c:var(--navy)}
+.band.t-teal{--c:var(--teal)}
+.band.t-sky{--c:var(--sky)}
+.band.t-rose{--c:var(--rose)}
 .band-accent svg{width:78px;height:78px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s ease}
 .band:hover .band-accent svg{transform:scale(1.08)}
 .band.t-navy,.band.t-teal,.band.t-rose,.band.t-sky{color:var(--navy)}
@@ -104,10 +112,11 @@ svg{display:block}
 .band:hover .band-link::after{transform:translateX(5px)}
 @media (max-width:700px){
   .band,.band:nth-child(even){flex-direction:column}
-  .band-accent{flex:0 0 120px}
+  .band-accent{flex:0 0 200px}
+  .band-accent::after,.band:nth-child(even) .band-accent::after{top:auto;left:0;right:0;bottom:0;width:auto;height:8px}
   .band-body{padding:26px 24px}
 }
-@media (prefers-reduced-motion:reduce){.band,.band-accent svg,.band-link::after{transition:none}.band:hover{transform:none;box-shadow:none}.band:hover .band-accent svg,.band:hover .band-link::after{transform:none}}
+@media (prefers-reduced-motion:reduce){.band,.band-accent img,.band-link::after{transition:none}.band:hover{transform:none;box-shadow:none}.band:hover .band-accent img,.band:hover .band-link::after{transform:none}}
 
 /* ---------- inner pages ---------- */
 .text-link{font-weight:600;border-bottom:2px solid var(--teal);padding-bottom:1px;background:linear-gradient(var(--navy),var(--navy)) left bottom/0 2px no-repeat;transition:background-size .3s ease}
