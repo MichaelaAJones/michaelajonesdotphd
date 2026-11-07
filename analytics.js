@@ -11,7 +11,7 @@
       dashboard as paths starting with "click/" (e.g. click/doi.org/10.1038/...)
 */
 (function () {
-  var CODE = 'YOUR-GOATCOUNTER-CODE';
+  var CODE = 'michaelajones';
 
   if (!CODE || CODE === 'YOUR-GOATCOUNTER-CODE') return;
   // Don't count your own visits while previewing locally.
